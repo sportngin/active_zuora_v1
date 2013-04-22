@@ -9,7 +9,7 @@ begin
     gem.description = "A client for Zuora API"
     gem.email = "andy.fleener@tstmedia.com"
     gem.homepage = "http://github.com/tstmedia/active_zuora"
-    gem.authors = ["Andy Fleener", "Ed Lebert"]
+    gem.authors = ["Andy Fleener", "Ed Lebert", "Nate Greene"]
     gem.files = FileList["CHANGES", "active_zuora.gemspec", "Rakefile", "README", "VERSION", "custom_fields.yml",
         "lib/**/*"]
     gem.add_dependency "soap4r", ">= 1.5.8"
