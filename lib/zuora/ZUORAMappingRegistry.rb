@@ -399,7 +399,6 @@ module DefaultMappingRegistry
       ["name", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Name")], [0, 1]],
       ["numberOfPeriods", ["SOAP::SOAPLong", XSD::QName.new(NsObjectApiZuoraCom, "NumberOfPeriods")], [0, 1]],
       ["overagePrice", ["SOAP::SOAPDouble", XSD::QName.new(NsObjectApiZuoraCom, "OveragePrice")], [0, 1]],
-      ["originalId", [nil, XSD::QName.new(NsObjectApiZuoraCom, "OriginalId")], [0, 1]],
       ["price", ["SOAP::SOAPDouble", XSD::QName.new(NsObjectApiZuoraCom, "Price")], [0, 1]],
       ["productRatePlanChargeId", [nil, XSD::QName.new(NsObjectApiZuoraCom, "ProductRatePlanChargeId")], [0, 1]],
       ["quantity", ["SOAP::SOAPDouble", XSD::QName.new(NsObjectApiZuoraCom, "Quantity")], [0, 1]],
@@ -408,7 +407,8 @@ module DefaultMappingRegistry
       ["triggerDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "TriggerDate")], [0, 1]],
       ["triggerEvent", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "TriggerEvent")], [0, 1]],
       ["uOM", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "UOM")], [0, 1]],
-      ["chargedThroughDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "ChargedThroughDate")], [0, 1]]
+      ["chargedThroughDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "ChargedThroughDate")], [0, 1]],
+      ["originalId", [nil, XSD::QName.new(NsObjectApiZuoraCom, "OriginalId")], [0, 1]]
     ]
   )
 
@@ -1133,7 +1133,8 @@ module DefaultMappingRegistry
       ["triggerDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "TriggerDate")], [0, 1]],
       ["triggerEvent", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "TriggerEvent")], [0, 1]],
       ["uOM", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "UOM")], [0, 1]],
-      ["chargedThroughDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "ChargedThroughDate")], [0, 1]]
+      ["chargedThroughDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "ChargedThroughDate")], [0, 1]],
+      ["originalId", [nil, XSD::QName.new(NsObjectApiZuoraCom, "OriginalId")], [0, 1]]
     ]
   )
 
