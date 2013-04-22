@@ -399,6 +399,7 @@ module DefaultMappingRegistry
       ["name", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "Name")], [0, 1]],
       ["numberOfPeriods", ["SOAP::SOAPLong", XSD::QName.new(NsObjectApiZuoraCom, "NumberOfPeriods")], [0, 1]],
       ["overagePrice", ["SOAP::SOAPDouble", XSD::QName.new(NsObjectApiZuoraCom, "OveragePrice")], [0, 1]],
+      ["originalId", [nil, XSD::QName.new(NsObjectApiZuoraCom, "OriginalId")], [0, 1]],
       ["price", ["SOAP::SOAPDouble", XSD::QName.new(NsObjectApiZuoraCom, "Price")], [0, 1]],
       ["productRatePlanChargeId", [nil, XSD::QName.new(NsObjectApiZuoraCom, "ProductRatePlanChargeId")], [0, 1]],
       ["quantity", ["SOAP::SOAPDouble", XSD::QName.new(NsObjectApiZuoraCom, "Quantity")], [0, 1]],
