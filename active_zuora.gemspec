@@ -5,10 +5,10 @@
 
 Gem::Specification.new do |s|
   s.name = "active_zuora"
-  s.version = "1.4.2"
+  s.version = "1.4.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Andy Fleener", "Ed Lebert"]
+  s.authors = ["Andy Fleener", "Ed Lebert", "Nate Greene"]
   s.date = "2013-02-18"
   s.description = "A client for Zuora API"
   s.email = "andy.fleener@tstmedia.com"

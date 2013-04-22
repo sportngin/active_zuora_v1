@@ -407,7 +407,8 @@ module DefaultMappingRegistry
       ["triggerDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "TriggerDate")], [0, 1]],
       ["triggerEvent", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "TriggerEvent")], [0, 1]],
       ["uOM", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "UOM")], [0, 1]],
-      ["chargedThroughDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "ChargedThroughDate")], [0, 1]]
+      ["chargedThroughDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "ChargedThroughDate")], [0, 1]],
+      ["originalId", [nil, XSD::QName.new(NsObjectApiZuoraCom, "OriginalId")], [0, 1]]
     ]
   )
 
@@ -1132,7 +1133,8 @@ module DefaultMappingRegistry
       ["triggerDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "TriggerDate")], [0, 1]],
       ["triggerEvent", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "TriggerEvent")], [0, 1]],
       ["uOM", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "UOM")], [0, 1]],
-      ["chargedThroughDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "ChargedThroughDate")], [0, 1]]
+      ["chargedThroughDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "ChargedThroughDate")], [0, 1]],
+      ["originalId", [nil, XSD::QName.new(NsObjectApiZuoraCom, "OriginalId")], [0, 1]]
     ]
   )
 

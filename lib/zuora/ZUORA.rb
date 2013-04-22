@@ -817,8 +817,9 @@ class RatePlanCharge < ZObject
   attr_accessor :triggerEvent
   attr_accessor :uOM
   attr_accessor :chargedThroughDate
+  attr_accessor :originalId
 
-  def initialize(fieldsToNull = [], id = nil, accountingCode = nil, billCycleDay = nil, billCycleType = nil,  chargeModel = nil, chargeNumber = nil, chargeType = nil, description = nil, dMRC = nil, dTCV = nil, includedUnits = nil, isLastSegment = nil, mRR = nil, name = nil, numberOfPeriods = nil, overagePrice = nil, price = nil, productRatePlanChargeId = nil, quantity = nil, ratePlanId = nil, tCV = nil, triggerDate = nil, triggerEvent = nil, uOM = nil, chargedThroughDate = nil)
+  def initialize(fieldsToNull = [], id = nil, accountingCode = nil, billCycleDay = nil, billCycleType = nil,  chargeModel = nil, chargeNumber = nil, chargeType = nil, description = nil, dMRC = nil, dTCV = nil, includedUnits = nil, isLastSegment = nil, mRR = nil, name = nil, numberOfPeriods = nil, overagePrice = nil, price = nil, productRatePlanChargeId = nil, quantity = nil, ratePlanId = nil, tCV = nil, triggerDate = nil, triggerEvent = nil, uOM = nil, chargedThroughDate = nil, originalId = nil)
     @fieldsToNull = fieldsToNull
     @id = id
     @accountingCode = accountingCode
@@ -845,6 +846,7 @@ class RatePlanCharge < ZObject
     @triggerEvent = triggerEvent
     @uOM = uOM
     @chargedThroughDate = chargedThroughDate
+    @originalId = originalId
   end
 end
 
