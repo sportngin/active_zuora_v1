@@ -8,16 +8,16 @@ module Zuora
     end
 
     def rate_plan_charge_tier
-      query = charge_model_query("ratePlanChargeId", id)
+      query = charge_tier_query("ratePlanChargeId", id)
       @rate_plan_charge_tier ||= RatePlanChargeTier.where(query).first
     end
 
     def product_rate_plan_charge_tier
-      query = charge_model_query("productRatePlanChargeId", productRatePlanChargeId)
+      query = charge_tier_query("productRatePlanChargeId", productRatePlanChargeId)
       @product_rate_plan_charge_tier ||= ProductRatePlanChargeTier.where(query).first
     end
 
-    def charge_model_query(identifier_name, identifier_value)
+    def charge_tier_query(identifier_name, identifier_value)
       query = "#{identifier_name} = '#{identifier_value}'"
       query = "#{query} and endingUnit >= #{charge_quantity} and startingUnit <= #{charge_quantity}" if chargeModel == "Volume Pricing"
     end
