@@ -1,10 +1,26 @@
 module Zuora
   class RatePlanCharge < ZObject
     
-    exclude_query_attributes :overagePrice, :includedUnits, :discountAmount, :discountPercentage
+    exclude_query_attributes :overagePrice, :includedUnits, :discountAmount, :discountPercentage, :price
 
     def rate_plan
       @rate_plan ||= RatePlan.find(self.ratePlanId)
+    end
+
+    def rate_plan_charge_tier
+      query = charge_tier_query("ratePlanChargeId", id)
+      @rate_plan_charge_tier ||= RatePlanChargeTier.where(query).first
+    end
+
+    def product_rate_plan_charge_tier
+      query = charge_tier_query("productRatePlanChargeId", productRatePlanChargeId)
+      @product_rate_plan_charge_tier ||= ProductRatePlanChargeTier.where(query).first
+    end
+
+    def charge_model_query(identifier_name, identifier_value)
+      query = "#{identifier_name} = '#{identifier_value}'"
+      query += " and endingUnit >= #{charge_quantity} and startingUnit <= #{charge_quantity}" if chargeModel == "Volume Pricing"
+      query
     end
 
     def product_rate_plan_charge
@@ -20,16 +36,24 @@ module Zuora
       self
     end
 
+    def charge_quantity
+      quantity || 1
+    end
+
+    def price
+      rate_plan_charge_tier.price
+    end
+
     def total_price
-      (quantity || 1) * price
+      charge_quantity * price
     end
 
     def list_price
-      product_rate_plan_charge.product_rate_plan_charge_tiers.first.price
+      product_rate_plan_charge_tier.price
     end
 
     def total_list_price
-      (quantity || 1) * list_price
+      charge_quantity * list_price
     end
 
     def discount?
