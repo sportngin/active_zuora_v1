@@ -7,12 +7,24 @@ module Zuora
       @rate_plan ||= RatePlan.find(self.ratePlanId)
     end
 
-    def product_rate_plan_charge
-      @product_rate_plan_charge ||= ProductRatePlanCharge.find(self.productRatePlanChargeId)
+    def rate_plan_charge_tier
+      @rate_plan_charge_tier ||= if chargeModel == "Volume Pricing"
+        RatePlanChargeTier.where("ratePlanChargeId = '#{id}' and endingUnit >= #{charge_quantity} and startingUnit <= #{charge_quantity}").first
+      else
+        RatePlanChargeTier.where("ratePlanChargeId = '#{id}'").first
+      end
     end
 
-    def rate_plan_charge_tier
-      @rate_plan_charge_tier ||= RatePlanChargeTier.where(:ratePlanChargeId => id)
+    def product_rate_plan_charge_tier
+      @product_rate_plan_charge_tier ||= if chargeModel == "Volume Pricing"
+        ProductRatePlanChargeTier.where("productRatePlanChargeId = '#{productRatePlanChargeId}' and endingUnit >= #{charge_quantity} and startingUnit <= #{charge_quantity}").first
+      else
+        ProductRatePlanChargeTier.where("productRatePlanChargeId = '#{productRatePlanChargeId}'").first
+      end
+    end
+
+    def product_rate_plan_charge
+      @product_rate_plan_charge ||= ProductRatePlanCharge.find(self.productRatePlanChargeId)
     end
 
     def usages
@@ -24,16 +36,24 @@ module Zuora
       self
     end
 
+    def charge_quantity
+      quantity || 1
+    end
+
+    def price
+      rate_plan_charge_tier.price
+    end
+
     def total_price
-      (quantity || 1) * rate_plan_charge_tier.first.price
+      charge_quantity * price
     end
 
     def list_price
-      product_rate_plan_charge.product_rate_plan_charge_tiers.first.price
+      product_rate_plan_charge_tier.price
     end
 
     def total_list_price
-      (quantity || 1) * list_price
+      charge_quantity * list_price
     end
 
     def discount?
