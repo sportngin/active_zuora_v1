@@ -8,19 +8,15 @@ module Zuora
     end
 
     def rate_plan_charge_tier
-      @rate_plan_charge_tier ||= if chargeModel == "Volume Pricing"
-        RatePlanChargeTier.where("ratePlanChargeId = '#{id}' and endingUnit >= #{charge_quantity} and startingUnit <= #{charge_quantity}").first
-      else
-        RatePlanChargeTier.where("ratePlanChargeId = '#{id}'").first
-      end
+      query = "ratePlanChargeId = '#{id}'"
+      query = "#{query} and endingUnit >= #{charge_quantity} and startingUnit <= #{charge_quantity}" if chargeModel == "Volume Pricing"
+      @rate_plan_charge_tier ||= RatePlanChargeTier.where(query).first
     end
 
     def product_rate_plan_charge_tier
-      @product_rate_plan_charge_tier ||= if chargeModel == "Volume Pricing"
-        ProductRatePlanChargeTier.where("productRatePlanChargeId = '#{productRatePlanChargeId}' and endingUnit >= #{charge_quantity} and startingUnit <= #{charge_quantity}").first
-      else
-        ProductRatePlanChargeTier.where("productRatePlanChargeId = '#{productRatePlanChargeId}'").first
-      end
+      query = "productRatePlanChargeId = '#{productRatePlanChargeId}'"
+      query = "#{query} and endingUnit >= #{charge_quantity} and startingUnit <= #{charge_quantity}" if chargeModel == "Volume Pricing"
+      @product_rate_plan_charge_tier ||= ProductRatePlanChargeTier.where(query).first
     end
 
     def product_rate_plan_charge
