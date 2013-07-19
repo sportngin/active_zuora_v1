@@ -1,7 +1,7 @@
 module Zuora
   class RatePlanCharge < ZObject
     
-    exclude_query_attributes :overagePrice, :includedUnits, :discountAmount, :discountPercentage
+    exclude_query_attributes :overagePrice, :includedUnits, :discountAmount, :discountPercentage, :price
 
     def rate_plan
       @rate_plan ||= RatePlan.find(self.ratePlanId)
@@ -9,6 +9,10 @@ module Zuora
 
     def product_rate_plan_charge
       @product_rate_plan_charge ||= ProductRatePlanCharge.find(self.productRatePlanChargeId)
+    end
+
+    def rate_plan_charge_tier
+      @rate_plan_charge_tier ||= RatePlanChargeTier.where(:ratePlanChargeId => id)
     end
 
     def usages
@@ -21,7 +25,7 @@ module Zuora
     end
 
     def total_price
-      (quantity || 1) * price
+      (quantity || 1) * rate_plan_charge_tier.first.price
     end
 
     def list_price
