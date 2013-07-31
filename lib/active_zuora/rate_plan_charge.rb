@@ -8,7 +8,6 @@ module Zuora
       # if method is price go to see if this RatePlanCharge has a price (will happen on creation but no other time since price is excluded), 
       # or go read the RatePlanChargeTier if there is one (Volume Pricing),
       result ||= rate_plan_charge_tier.price if method_name == :price
-      
       result
     end
 
