@@ -27,10 +27,6 @@ module Zuora
       @product_rate_plan_charge ||= ProductRatePlanCharge.find(self.productRatePlanChargeId)
     end
 
-    def price
-      super || rate_plan_charge_tier.price
-    end
-
     def usages
       @usages ||= Usage.where(:chargeId => id)
     end
@@ -42,6 +38,10 @@ module Zuora
 
     def charge_quantity
       quantity || 1
+    end
+
+    def price
+      super || rate_plan_charge_tier.price
     end
 
     def total_price
