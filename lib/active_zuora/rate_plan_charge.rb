@@ -41,7 +41,7 @@ module Zuora
     end
 
     def price
-      rate_plan_charge_tier.price
+      super || rate_plan_charge_tier.price
     end
 
     def total_price
