@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "active_zuora"
-  s.version = "1.4.7"
+  s.version = "1.4.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andy Fleener", "Ed Lebert", "Nate Greene"]
-  s.date = "2013-07-19"
+  s.date = "2013-07-31"
   s.description = "A client for Zuora API"
   s.email = "andy.fleener@tstmedia.com"
   s.extra_rdoc_files = [
@@ -61,7 +61,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/tstmedia/active_zuora"
   s.require_paths = ["lib"]
   s.requirements = ["none"]
-  s.rubygems_version = "1.8.24"
+  s.rubygems_version = "1.8.17"
   s.summary = "Active Zuora"
 
   if s.respond_to? :specification_version then
