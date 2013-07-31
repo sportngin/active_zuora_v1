@@ -2,6 +2,15 @@ module Zuora
   class RatePlanCharge < ZObject
     
     exclude_query_attributes :overagePrice, :includedUnits, :discountAmount, :discountPercentage, :price
+    
+    def method_missing(method_name, *args, &block)
+      result = super
+      # if method is price go to see if this RatePlanCharge has a price (will happen on creation but no other time since price is excluded), 
+      # or go read the RatePlanChargeTier if there is one (Volume Pricing),
+      result ||= rate_plan_charge_tier.price if method_name == :price
+      
+      result
+    end
 
     def rate_plan
       @rate_plan ||= RatePlan.find(self.ratePlanId)
@@ -38,10 +47,6 @@ module Zuora
 
     def charge_quantity
       quantity || 1
-    end
-
-    def price
-      rate_plan_charge_tier.price
     end
 
     def total_price
