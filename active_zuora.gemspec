@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "active_zuora"
-  s.version = "1.4.9"
+  s.version = "1.4.10"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andy Fleener", "Ed Lebert", "Nate Greene"]
@@ -73,14 +73,14 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<json_pure>, ["~> 1.4"])
       s.add_development_dependency(%q<rake>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
-      s.add_runtime_dependency(%q<soap4r>, [">= 1.5.8"])
+      s.add_runtime_dependency(%q<mumboe-soap4r>, [">= 1.5.8"])
       s.add_runtime_dependency(%q<json_pure>, [">= 1.4.6"])
     else
       s.add_dependency(%q<soap4r>, ["~> 1.5"])
       s.add_dependency(%q<json_pure>, ["~> 1.4"])
       s.add_dependency(%q<rake>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
-      s.add_dependency(%q<soap4r>, [">= 1.5.8"])
+      s.add_dependency(%q<mumboe-soap4r>, [">= 1.5.8"])
       s.add_dependency(%q<json_pure>, [">= 1.4.6"])
     end
   else
@@ -88,7 +88,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<json_pure>, ["~> 1.4"])
     s.add_dependency(%q<rake>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
-    s.add_dependency(%q<soap4r>, [">= 1.5.8"])
+    s.add_dependency(%q<mumboe-soap4r>, [">= 1.5.8"])
     s.add_dependency(%q<json_pure>, [">= 1.4.6"])
   end
 end
