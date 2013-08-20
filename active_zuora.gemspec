@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "active_zuora"
-  s.version = "1.4.8"
+  s.version = "1.4.9"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Andy Fleener", "Ed Lebert", "Nate Greene"]
-  s.date = "2013-07-31"
+  s.date = "2013-08-20"
   s.description = "A client for Zuora API"
   s.email = "andy.fleener@tstmedia.com"
   s.extra_rdoc_files = [
@@ -50,6 +50,7 @@ Gem::Specification.new do |s|
     "lib/active_zuora/subscription_data.rb",
     "lib/active_zuora/usage.rb",
     "lib/active_zuora/zobject.rb",
+    "lib/soap/property",
     "lib/zuora/ZUORA.rb",
     "lib/zuora/ZUORADriver.rb",
     "lib/zuora/ZUORAMappingRegistry.rb",
@@ -68,26 +69,26 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<mumboe-soap4r>, ["~> 1.5"])
+      s.add_runtime_dependency(%q<soap4r>, ["~> 1.5"])
       s.add_runtime_dependency(%q<json_pure>, ["~> 1.4"])
       s.add_development_dependency(%q<rake>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
-      s.add_runtime_dependency(%q<mumboe-soap4r>, [">= 1.5.8"])
+      s.add_runtime_dependency(%q<soap4r>, [">= 1.5.8"])
       s.add_runtime_dependency(%q<json_pure>, [">= 1.4.6"])
     else
-      s.add_dependency(%q<mumboe-soap4r>, ["~> 1.5"])
+      s.add_dependency(%q<soap4r>, ["~> 1.5"])
       s.add_dependency(%q<json_pure>, ["~> 1.4"])
       s.add_dependency(%q<rake>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
-      s.add_dependency(%q<mumboe-soap4r>, [">= 1.5.8"])
+      s.add_dependency(%q<soap4r>, [">= 1.5.8"])
       s.add_dependency(%q<json_pure>, [">= 1.4.6"])
     end
   else
-    s.add_dependency(%q<mumboe-soap4r>, ["~> 1.5"])
+    s.add_dependency(%q<soap4r>, ["~> 1.5"])
     s.add_dependency(%q<json_pure>, ["~> 1.4"])
     s.add_dependency(%q<rake>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
-    s.add_dependency(%q<mumboe-soap4r>, [">= 1.5.8"])
+    s.add_dependency(%q<soap4r>, [">= 1.5.8"])
     s.add_dependency(%q<json_pure>, [">= 1.4.6"])
   end
 end
