@@ -2,7 +2,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     git (1.2.5)
-    httpclient (2.2.4)
+    httpclient (2.3.4.1)
     jeweler (1.8.4)
       bundler (~> 1.0)
       git (>= 1.2.5)
@@ -10,11 +10,11 @@ GEM
       rdoc
     json (1.7.7)
     json_pure (1.6.5)
+    mumboe-soap4r (1.5.8.6)
+      httpclient (>= 2.1.1)
     rake (10.0.3)
     rdoc (3.12.1)
       json (~> 1.4)
-    soap4r (1.5.8)
-      httpclient (>= 2.1.1)
     test-unit (2.4.8)
 
 PLATFORMS
@@ -23,6 +23,6 @@ PLATFORMS
 DEPENDENCIES
   jeweler
   json_pure (~> 1.4)
+  mumboe-soap4r (~> 1.5)
   rake
-  soap4r (~> 1.5)
   test-unit
