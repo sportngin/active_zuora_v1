@@ -19,7 +19,7 @@ module Zuora
 
     def charge_tier_query(identifier_name, identifier_value)
       query = "#{identifier_name} = '#{identifier_value}'"
-      query += " and endingUnit >= #{charge_quantity} and startingUnit <= #{charge_quantity}" if chargeModel == "Volume Pricing"
+      query += " and endingUnit >= #{charge_quantity} and startingUnit <= #{charge_quantity}" if tiered_pricing_model?
       query
     end
 
@@ -34,6 +34,10 @@ module Zuora
     def unload_usages
       @usages = nil
       self
+    end
+
+    def tiered_pricing_model?
+      chargeModel == "Volume Pricing" || chargeModel == "Tiered Pricing"
     end
 
     def charge_quantity
