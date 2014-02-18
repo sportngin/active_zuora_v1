@@ -1,6 +1,9 @@
 module Zuora
   class RatePlanCharge < ZObject
     
+    #this code only supports flat fee, per unit and volume pricing.   It does not support tiered pricing.
+
+
     exclude_query_attributes :overagePrice, :includedUnits, :discountAmount, :discountPercentage, :price
 
     def rate_plan
@@ -19,7 +22,7 @@ module Zuora
 
     def charge_tier_query(identifier_name, identifier_value)
       query = "#{identifier_name} = '#{identifier_value}'"
-      query += " and endingUnit >= #{charge_quantity} and startingUnit <= #{charge_quantity}" if tiered_pricing_model?
+      query += " and startingUnit <= #{charge_quantity} and endingUnit >= #{charge_quantity}" if chargeModel == "Volume Pricing"
       query
     end
 
@@ -36,10 +39,6 @@ module Zuora
       self
     end
 
-    def tiered_pricing_model?
-      chargeModel == "Volume Pricing" || chargeModel == "Tiered Pricing"
-    end
-
     def charge_quantity
       quantity || 1
     end
@@ -49,7 +48,7 @@ module Zuora
     end
 
     def total_price
-      charge_quantity * price
+      rate_plan_charge_tier.priceFormat == "Flat Fee" ? price : charge_quantity * price
     end
 
     def list_price
@@ -57,7 +56,7 @@ module Zuora
     end
 
     def total_list_price
-      charge_quantity * list_price
+      product_rate_plan_charge_tier.priceFormat == "Flat Fee" ? list_price : charge_quantity * list_price
     end
 
     def discount?
