@@ -710,6 +710,7 @@ end
 #   id - (any)
 #   endingUnit - SOAP::SOAPDouble
 #   price - SOAP::SOAPDouble
+#   priceFormat - SOAP::SOAPString
 #   productRatePlanChargeId - (any)
 #   startingUnit - SOAP::SOAPDouble
 #   tier - SOAP::SOAPInt
@@ -718,17 +719,19 @@ class ProductRatePlanChargeTier < ZObject
   attr_accessor :id
   attr_accessor :endingUnit
   attr_accessor :price
+  attr_accessor :priceFormat
   attr_accessor :productRatePlanChargeId
   attr_accessor :startingUnit
   attr_accessor :tier
   attr_accessor :active
   attr_accessor :currency
 
-  def initialize(fieldsToNull = [], id = nil, endingUnit = nil, price = nil, productRatePlanChargeId = nil, startingUnit = nil, tier = nil, active=nil, currency=nil)
+  def initialize(fieldsToNull = [], id = nil, endingUnit = nil, price = nil, priceFormat = nil, productRatePlanChargeId = nil, startingUnit = nil, tier = nil, active=nil, currency=nil)
     @fieldsToNull = fieldsToNull
     @id = id
     @endingUnit = endingUnit
     @price = price
+    @priceFormat = priceFormat
     @productRatePlanChargeId = productRatePlanChargeId
     @startingUnit = startingUnit
     @tier = tier
