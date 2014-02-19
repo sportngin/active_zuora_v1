@@ -9,7 +9,7 @@ GEM
       rake
       rdoc
     json (1.7.7)
-    json_pure (1.6.5)
+    json_pure (1.4.6)
     mumboe-soap4r (1.5.8.6)
       httpclient (>= 2.1.1)
     rake (10.0.3)
@@ -22,7 +22,7 @@ PLATFORMS
 
 DEPENDENCIES
   jeweler
-  json_pure (~> 1.4)
-  mumboe-soap4r (~> 1.5)
+  json_pure (~> 1.4.6)
+  mumboe-soap4r (~> 1.5.8)
   rake
   test-unit
