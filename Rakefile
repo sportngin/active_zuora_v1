@@ -12,7 +12,6 @@ begin
     gem.authors = ["Andy Fleener", "Ed Lebert", "Nate Greene"]
     gem.files = FileList["CHANGES", "active_zuora.gemspec", "Rakefile", "README", "VERSION", "custom_fields.yml",
         "lib/**/*"]
-    gem.add_dependency "mumboe-soap4r", ">= 1.5.8"
     gem.add_dependency "json_pure", ">= 1.4.6"
     gem.requirements = ["none"]
   end
