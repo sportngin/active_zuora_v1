@@ -12,7 +12,6 @@ begin
     gem.authors = ["Andy Fleener", "Ed Lebert", "Nate Greene"]
     gem.files = FileList["CHANGES", "active_zuora.gemspec", "Rakefile", "README", "VERSION", "custom_fields.yml",
         "lib/**/*"]
-    gem.add_dependency "json_pure", ">= 1.4.6"
     gem.requirements = ["none"]
   end
   Jeweler::GemcutterTasks.new
