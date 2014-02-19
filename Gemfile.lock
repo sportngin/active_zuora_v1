@@ -56,7 +56,7 @@ PLATFORMS
 
 DEPENDENCIES
   jeweler
-  json_pure (~> 1.4.6)
-  mumboe-soap4r (~> 1.5.8)
+  json_pure (>= 1.4.6)
+  mumboe-soap4r (>= 1.5.8)
   rake
   test-unit
