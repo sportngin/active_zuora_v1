@@ -38,7 +38,7 @@ module Zuora
       end
     end
 
-    # Any attributes that are Dates should be created as a 
+    # Any attributes that are Dates should be created as a
     # DateTime in the PST timezone.
     # Zuora doesn't actually use the time portion of any Datetime field.
     # All that matters is the date.
@@ -143,14 +143,8 @@ module Zuora
     end
 
     def self.client
-      return @client if @client && self.valid_session?
-      @session_start_time = Time.now
-      @client = Zuora::Client.new
+      @client = Zuora::Client.client
     end
 
-    def self.valid_session?
-      #session is valid if it has been running for less than 8 hours
-      @session_start_time + 28800 > Time.now
-    end
   end
 end
