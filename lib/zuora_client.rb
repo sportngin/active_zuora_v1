@@ -76,8 +76,9 @@ module Zuora
       @custom_fields = YAML.load_file(File.dirname(__FILE__) + '/../custom_fields.yml')
     end
 
-    def self.client(*args)
-      @client ||= new(*args)
+    def self.client(force_reload=false, *args)
+      return @client if @client && !force_reload
+      @client = new(*args)
     end
 
     def initialize(url=nil)

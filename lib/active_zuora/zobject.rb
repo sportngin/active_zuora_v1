@@ -145,7 +145,7 @@ module Zuora
     def self.client
       return @client if @client && self.valid_session?
       @session_start_time = Time.now
-      @client = Zuora::Client.client
+      @client = Zuora::Client.client(true)
     end
 
     def self.valid_session?
