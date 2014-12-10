@@ -76,6 +76,10 @@ module Zuora
       @custom_fields = YAML.load_file(File.dirname(__FILE__) + '/../custom_fields.yml')
     end
 
+    def self.client(*args)
+      @client ||= new(*args)
+    end
+
     def initialize(url=nil)
       $ZUORA_USER = self.class.config["username"]
       $ZUORA_PASSWORD = self.class.config["password"]
