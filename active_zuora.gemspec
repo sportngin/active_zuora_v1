@@ -6,7 +6,7 @@
 
 Gem::Specification.new do |s|
   s.name = "active_zuora"
-  s.version = "1.4.18"
+  s.version = "1.4.19"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
