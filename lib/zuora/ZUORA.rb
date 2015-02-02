@@ -926,8 +926,9 @@ class Subscription < ZObject
   attr_accessor :termEndDate
   attr_accessor :termType
   attr_accessor :version
+  attr_accessor :isInvoiceSeparate
 
-  def initialize(fieldsToNull = [], id = nil, accountId = nil, autoRenew = nil, cancelledDate = nil, createdDate = nil, contractAcceptanceDate = nil, contractEffectiveDate = nil, initialTerm = nil, name = nil, notes = nil, originalId = nil, previousSubscriptionId = nil, renewalTerm = nil, serviceActivationDate = nil, subscriptionEndDate = nil, status = nil, termStartDate = nil, termEndDate = nil, termType = nil, version = nil)
+  def initialize(fieldsToNull = [], id = nil, accountId = nil, autoRenew = nil, cancelledDate = nil, createdDate = nil, contractAcceptanceDate = nil, contractEffectiveDate = nil, initialTerm = nil, name = nil, notes = nil, originalId = nil, previousSubscriptionId = nil, renewalTerm = nil, serviceActivationDate = nil, subscriptionEndDate = nil, status = nil, termStartDate = nil, termEndDate = nil, termType = nil, version = nil, isInvoiceSeparate = nil)
     @fieldsToNull = fieldsToNull
     @id = id
     @accountId = accountId
@@ -949,6 +950,7 @@ class Subscription < ZObject
     @termEndDate = termEndDate
     @termType = termType
     @version = version
+    @isInvoiceSeparate = isInvoiceSeparate
   end
 end
 
@@ -1151,7 +1153,7 @@ class AmendOptions
   attr_accessor :generateInvoice, :invoiceProcessingOptions, :processPayments
 
   def initialize(generateInvoice = nil, invoiceProcessingOptions = nil, processPayments = nil)
-    @generateInvoice, @invoiceProcessingOptions, @processPayments = 
+    @generateInvoice, @invoiceProcessingOptions, @processPayments =
       generateInvoice, invoiceProcessingOptions, processPayments
   end
 end
