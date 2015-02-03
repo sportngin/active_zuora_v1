@@ -927,8 +927,9 @@ class Subscription < ZObject
   attr_accessor :termType
   attr_accessor :version
   attr_accessor :isInvoiceSeparate
+  attr_accessor :invoiceOwnerId
 
-  def initialize(fieldsToNull = [], id = nil, accountId = nil, autoRenew = nil, cancelledDate = nil, createdDate = nil, contractAcceptanceDate = nil, contractEffectiveDate = nil, initialTerm = nil, name = nil, notes = nil, originalId = nil, previousSubscriptionId = nil, renewalTerm = nil, serviceActivationDate = nil, subscriptionEndDate = nil, status = nil, termStartDate = nil, termEndDate = nil, termType = nil, version = nil, isInvoiceSeparate = nil)
+  def initialize(fieldsToNull = [], id = nil, accountId = nil, autoRenew = nil, cancelledDate = nil, createdDate = nil, contractAcceptanceDate = nil, contractEffectiveDate = nil, initialTerm = nil, name = nil, notes = nil, originalId = nil, previousSubscriptionId = nil, renewalTerm = nil, serviceActivationDate = nil, subscriptionEndDate = nil, status = nil, termStartDate = nil, termEndDate = nil, termType = nil, version = nil, isInvoiceSeparate = nil, invoiceOwnerId = nil)
     @fieldsToNull = fieldsToNull
     @id = id
     @accountId = accountId
@@ -951,6 +952,7 @@ class Subscription < ZObject
     @termType = termType
     @version = version
     @isInvoiceSeparate = isInvoiceSeparate
+    @invoiceOwnerId = invoiceOwnerId
   end
 end
 

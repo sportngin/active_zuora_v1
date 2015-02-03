@@ -454,7 +454,8 @@ module DefaultMappingRegistry
       ["termStartDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "TermStartDate")], [0, 1]],
       ["termEndDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "TermEndDate")], [0, 1]],
       ["version", ["SOAP::SOAPInt", XSD::QName.new(NsObjectApiZuoraCom, "Version")], [0, 1]],
-      ["isInvoiceSeparate", ["SOAP::SOAPBoolean", XSD::QName.new(NsObjectApiZuoraCom, "IsInvoiceSeparate")], [0, 1]]
+      ["isInvoiceSeparate", ["SOAP::SOAPBoolean", XSD::QName.new(NsObjectApiZuoraCom, "IsInvoiceSeparate")], [0, 1]],
+      ["invoiceOwnerId", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "invoiceOwnerId")], [0, 1]]
     ]
   )
 
@@ -1184,7 +1185,8 @@ module DefaultMappingRegistry
       ["termEndDate", ["SOAP::SOAPDateTime", XSD::QName.new(NsObjectApiZuoraCom, "TermEndDate")], [0, 1]],
       ["termType", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "TermType")], [0, 1]],
       ["version", ["SOAP::SOAPInt", XSD::QName.new(NsObjectApiZuoraCom, "Version")], [0, 1]],
-      ["isInvoiceSeparate", ["SOAP::SOAPBoolean", XSD::QName.new(NsObjectApiZuoraCom, "IsInvoiceSeparate")], [0, 1]]
+      ["isInvoiceSeparate", ["SOAP::SOAPBoolean", XSD::QName.new(NsObjectApiZuoraCom, "IsInvoiceSeparate")], [0, 1]],
+      ["invoiceOwnerId", ["SOAP::SOAPString", XSD::QName.new(NsObjectApiZuoraCom, "invoiceOwnerId")], [0, 1]]
     ]
   )
 
