@@ -133,7 +133,7 @@ module Zuora
         response = @client.api_call(:create,obj)
         save_results_to_hash(response)
       rescue Exception => e
-        [errors: {message: e.message, code: nil}, object: obj]
+        [errors: [{message: e.message, code: nil}], object: obj]
       end
     end
 
@@ -142,7 +142,7 @@ module Zuora
         response = @client.api_call(:generate,obj)
         save_results_to_hash(response)
       rescue Exception => e
-        [errors: {message: e.message, code: nil}, object: obj]
+        [errors: [{message: e.message, code: nil}], object: obj]
       end
     end
 
@@ -151,7 +151,7 @@ module Zuora
         response = @client.api_call(:update, obj)
         save_results_to_hash(response)
       rescue Exception => e
-        [errors: {message: e.message, code: nil}, object: obj]
+        [errors: [{message: e.message, code: nil}], object: obj]
       end
     end
 
@@ -160,7 +160,7 @@ module Zuora
         response = @client.api_call(:delete, type, ids)
         save_results_to_hash(response)
       rescue Exception => e
-        [errors: {message: e.message, code: nil}, object: obj]
+        [errors: [{message: e.message, code: nil}], object: obj]
       end
     end
 
