@@ -125,7 +125,7 @@ module Zuora
         response = @client.api_call(:subscribe, obj)
         return response
       rescue Exception => e
-        puts e.message
+        return [errors: e.message]
       end
     end
 
@@ -134,7 +134,7 @@ module Zuora
         response = @client.api_call(:create,obj)
         result = save_results_to_hash(response)
       rescue Exception => e
-        puts e.message
+        result = [errors: e.message]
       end
       result || []
     end
@@ -144,7 +144,7 @@ module Zuora
         response = @client.api_call(:generate,obj)
         result = save_results_to_hash(response)
       rescue Exception => e
-        puts e.message
+        result = [errors: e.message]
       end
       result || []
     end
@@ -154,7 +154,7 @@ module Zuora
         response = @client.api_call(:update, obj)
         result = save_results_to_hash(response)
       rescue Exception => e
-        puts e.message
+        result = [errors: e.message]
       end
       result || []
     end
@@ -164,7 +164,7 @@ module Zuora
         response = @client.api_call(:delete, type, ids)
         result = save_results_to_hash(response)
       rescue Exception => e
-        puts e.message
+        result = [errors: e.message]
       end
       result || []
     end
