@@ -124,7 +124,7 @@ module Zuora
       begin
         @client.api_call(:subscribe, obj)
       rescue Exception => e
-        [errors: {message: e.message, code: nil}, object: obj]
+        puts e.message
       end
     end
 
