@@ -122,8 +122,7 @@ module Zuora
 
     def subscribe(obj)
       begin
-        response = @client.api_call(:subscribe, obj)
-        return response
+        @client.api_call(:subscribe, obj)
       rescue Exception => e
         puts e.message
       end
@@ -132,41 +131,37 @@ module Zuora
     def create(obj)
       begin
         response = @client.api_call(:create,obj)
-        result = save_results_to_hash(response)
+        save_results_to_hash(response)
       rescue Exception => e
-        puts e.message
+        [errors: [{message: e.message, code: nil}], object: obj]
       end
-      result || []
     end
 
     def generate(obj)
       begin
         response = @client.api_call(:generate,obj)
-        result = save_results_to_hash(response)
+        save_results_to_hash(response)
       rescue Exception => e
-        puts e.message
+        [errors: [{message: e.message, code: nil}], object: obj]
       end
-      result || []
     end
 
     def update(obj)
       begin
         response = @client.api_call(:update, obj)
-        result = save_results_to_hash(response)
+        save_results_to_hash(response)
       rescue Exception => e
-        puts e.message
+        [errors: [{message: e.message, code: nil}], object: obj]
       end
-      result || []
     end
 
     def delete(type, ids)
       begin
         response = @client.api_call(:delete, type, ids)
-        result = save_results_to_hash(response)
+        save_results_to_hash(response)
       rescue Exception => e
-        puts e.message
+        [errors: [{message: e.message, code: nil}], object: obj]
       end
-      result || []
     end
 
     def amend(obj)
