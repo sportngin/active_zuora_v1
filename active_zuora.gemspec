@@ -65,26 +65,9 @@ Gem::Specification.new do |s|
   s.requirements = ["none"]
   s.rubygems_version = "2.4.6"
   s.summary = "Active Zuora"
-
-  if s.respond_to? :specification_version then
-    s.specification_version = 4
-
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<mumboe-soap4r>, [">= 1.5.8"])
-      s.add_runtime_dependency(%q<json_pure>, [">= 1.4.6"])
-      s.add_development_dependency(%q<rake>, [">= 0"])
-      s.add_development_dependency(%q<jeweler>, [">= 0"])
-    else
-      s.add_dependency(%q<mumboe-soap4r>, [">= 1.5.8"])
-      s.add_dependency(%q<json_pure>, [">= 1.4.6"])
-      s.add_dependency(%q<rake>, [">= 0"])
-      s.add_dependency(%q<jeweler>, [">= 0"])
-    end
-  else
-    s.add_dependency(%q<mumboe-soap4r>, [">= 1.5.8"])
-    s.add_dependency(%q<json_pure>, [">= 1.4.6"])
-    s.add_dependency(%q<rake>, [">= 0"])
-    s.add_dependency(%q<jeweler>, [">= 0"])
-  end
+  s.add_dependency('soap4r-ng')
+  s.add_dependency('json_pure')
+  s.add_development_dependency('rake')
+  s.add_development_dependency('test-unit')
 end
 

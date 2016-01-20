@@ -23,3 +23,4 @@ zuora-client.gemspec
 .idea
 
 ## PROJECT::SPECIFIC
+Gemfile.lock

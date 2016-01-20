@@ -1,23 +1,8 @@
-require 'rubygems'
+require "bundler/gem_tasks"
+require 'bundler'
+Bundler.setup
 require 'rake'
-
-begin
-  require 'jeweler'
-  Jeweler::Tasks.new do |gem|
-    gem.name = "active_zuora"
-    gem.summary = "Active Zuora"
-    gem.description = "A client for Zuora API"
-    gem.email = "andy.fleener@tstmedia.com"
-    gem.homepage = "http://github.com/tstmedia/active_zuora"
-    gem.authors = ["Andy Fleener", "Ed Lebert", "Nate Greene"]
-    gem.files = FileList["CHANGES", "active_zuora.gemspec", "Rakefile", "README", "VERSION", "custom_fields.yml",
-        "lib/**/*"]
-    gem.requirements = ["none"]
-  end
-  Jeweler::GemcutterTasks.new
-rescue LoadError
-  puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
-end
+require 'test-unit'
 
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
@@ -38,8 +23,6 @@ rescue LoadError
     abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
   end
 end
-
-task :test => :check_dependencies
 
 task :default => :test
 
