@@ -68,5 +68,6 @@ Gem::Specification.new do |s|
   s.add_dependency('soap4r-ng')
   s.add_dependency('json_pure')
   s.add_development_dependency('rake')
+  s.add_development_dependency('test-unit')
 end
 
