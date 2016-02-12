@@ -66,7 +66,6 @@ Gem::Specification.new do |s|
   s.rubygems_version = "2.4.6"
   s.summary = "Active Zuora"
   s.add_dependency('soap4r-ng')
-  s.add_dependency('json_pure')
   s.add_development_dependency('rake')
   s.add_development_dependency('test-unit')
 end
