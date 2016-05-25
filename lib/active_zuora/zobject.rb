@@ -110,7 +110,7 @@ module Zuora
 
     def self.where(conditions={}, options={})
       # You can give a hash or a string for the conditions
-      conditions = build_filter_statments(conditions) if conditions.is_a? Hash
+      conditions = build_filter_statments(conditions)
       query = "select #{self.query_attribute_names(options).join(", ")} from #{self.name.gsub(/Zuora::/,"")} where #{conditions}"
       puts query if $DEBUG
       zobjects = self.client.query(query)
@@ -118,11 +118,15 @@ module Zuora
     end
 
     def self.build_filter_statments(filter_statments)
-      filter_statments.map{|key, value|
-        value = "'#{value}'" if value.kind_of?(String)
-        value = "null" if value.nil?
-        "#{key} = #{value}"
-      }.join(" and ")
+      if filter_statments.is_a?(Hash)
+        filter_statments.map{|key, value|
+          value = "'#{value}'" if value.kind_of?(String)
+          value = "null" if value.nil?
+          "#{key} = #{value}"
+        }.join(" and ")
+      else
+        filter_statments
+      end
     end
 
     def self.find(id)

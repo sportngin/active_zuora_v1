@@ -16,6 +16,10 @@ module Zuora
       @invoices ||= Invoice.where(:accountid => self.id)
     end
 
+    def invoices_with_balance
+      @invoices_with_balance ||= Invoice.where("accountId = '#{self.id}' AND Balance > 0")
+    end
+
     def payment_methods
       @payment_methods ||= PaymentMethod.where(:accountid => self.id)
     end
